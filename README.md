@@ -47,10 +47,40 @@ set listFilter(value:string){
 ```
 ngAfterViewInit()
 ```
-so component after template is rendered
+so we can get template variable in component after template is rendered
+
+```
+@ViewChild('filterElement') filterElementRef:ElementRef;
+<input type='text' #filterElement [(ngModel)]='listFilter'/>
+```
 ```
 ngAfterViewInit():void{
   console.log(this.filterElementRef);
+  this.filterElementRef.nativeElement.focus();
 }
 
+```
+considerations when using nativeElement
+- directly access DOM
+- tightly coupled with browser
+- May not be able to use server side rendering
+- pose threat,  innerHtml
+
+
+### 4 ViewChildren
+```
+@ViewChildren('divElementVar')
+divElementRefs: QueryList<ElementRef>;
+```
+
+
+### 5 ViewChild and Angular Forms
+Template
+```
+<input type='text' [(ngModel)]='listFilter'/>
+```
+Component
+```
+@ViewChild(NgModel) filterInput: NgModel;
+this.filterInput.valueChanges.subscribe(()=>this.performFilter(this.listFilter)):
 ```
