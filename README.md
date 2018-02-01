@@ -1,6 +1,7 @@
 # psa2compocommu_nt
 
-
+## 3. Communicating with a Template
+### 4 Two-way binding
 short way vs long way
 ```
 <input type='text' [(ngModel)]='listFilter'/>
@@ -23,5 +24,20 @@ performFilter(filterBy?:string):void{
   else{
     this.filteredProducts=this.products
   }
+}
+```
+
+### 5 Getters and Setters
+```
+<input type='text' [(ngModel)]='listFilter'/>
+```
+```
+private _listener: string
+get listFilter(): string{
+  return this._listFilter;
+}
+set listFilter(value:string){
+  this._listFIlter=value;
+  this.performFilter(this.listFilter);
 }
 ```
