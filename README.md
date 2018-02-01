@@ -41,3 +41,16 @@ set listFilter(value:string){
   this.performFilter(this.listFilter);
 }
 ```
+
+## 4. ViewChild and ViewChildren
+### 3 Demo: ViewChild and Access
+```
+ngAfterViewInit()
+```
+so component after template is rendered
+```
+ngAfterViewInit():void{
+  console.log(this.filterElementRef);
+}
+
+```
