@@ -72,7 +72,12 @@ considerations when using nativeElement
 @ViewChildren('divElementVar')
 divElementRefs: QueryList<ElementRef>;
 ```
-
+Differences:
+- Returns a QueryList of element or directive references
+- Tracks changes in the DOM
+```
+this.divElementRefs.changes.subscribe(()=>{})
+```
 
 ### 5 ViewChild and Angular Forms
 Template
