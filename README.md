@@ -79,7 +79,7 @@ Differences:
 this.divElementRefs.changes.subscribe(()=>{})
 ```
 
-### 5 ViewChild and Angular Forms
+### 4 ViewChildren
 Template
 ```
 <input type='text' [(ngModel)]='listFilter'/>
@@ -89,3 +89,15 @@ Component
 @ViewChild(NgModel) filterInput: NgModel;
 this.filterInput.valueChanges.subscribe(()=>this.performFilter(this.listFilter)):
 ```
+
+### 5 ViewChild and Angular Forms
+Notifying the Component of User Changes
+- Two-way binding, the long way
+- Getter and setter
+- valueChanges observable  
+
+Template-driven | Reactive
+---|---
+Angular creates the form data structures|We create the form data structures
+Based on info in the template|Defined in the component class
+Access reference with ViewChild|No need for ViewChild
