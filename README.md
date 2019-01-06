@@ -61,10 +61,10 @@ ngAfterViewInit():void{
 
 ```
 considerations when using nativeElement
-- directly access DOM
-- tightly coupled with browser
-- May not be able to use server side rendering
-- pose threat,  innerHtml
+- Using nativeElement -> directly accessing the DOM
+- Tightly coupled to the browser
+- May not be able to use server side rendering or web workers
+- Can pose a security threat, especially if accessing innerHtml
 
 
 ### 4 ViewChildren
