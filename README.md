@@ -101,3 +101,25 @@ Template-driven | Reactive
 Angular creates the form data structures|We create the form data structures
 Based on info in the template|Defined in the component class
 Access reference with ViewChild|No need for ViewChild
+
+
+## 5. Communicating with a Child Component
+### 4 Input Property
+
+### 5 Watching for Changes
+parentcopmonent->parenttemplate->childcomponent->childtemplate
+
+
+
+### 6 Template Reference Variable
+(we saw this in ViewChild section)
+##### parent Template
+```
+<pm-criteria #name [dislayDetail]=''>
+</pm-criteria>
+{{name.listFilter}}
+```
+##### Child template
+```
+listFilter:string
+```
