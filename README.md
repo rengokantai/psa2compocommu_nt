@@ -123,3 +123,16 @@ parentcopmonent->parenttemplate->childcomponent->childtemplate
 ```
 listFilter:string
 ```
+
+
+## 6. ViewChild Decorator
+##### parent template
+```
+<pm-criteria #name [dislayDetail]=''>
+</pm-criteria>
+```
+##### parent component
+```
+@ViewChild('name')
+childcomponent:ChildComponent;
+```
